@@ -1,6 +1,6 @@
 # Cavite River Watch
 
-A Streamlit dashboard for pasted or uploaded river-monitoring TSV data. It maps stations, converts numeric readings to centimetres for display, and keeps road-flood depth separate from river-stage measurements.
+A Streamlit dashboard for pasted or uploaded Philippine water-monitoring TSV data. It maps stations, recognizes metre/foot/inch readings, and interprets qualitative Red and Normal reports without treating unlike gauge datums as directly comparable.
 
 ## Run
 
@@ -11,7 +11,8 @@ streamlit run app.py
 
 The app expects these tab-separated columns:
 
-`river_or_site, station, location, water_level, observed_at, status`
+Required: `river_or_site, station, location, water_level, observed_at`
+
+Optional: `status`
 
 For new stations, add verified latitude/longitude pairs to `COORDS` in `app.py`.
-
